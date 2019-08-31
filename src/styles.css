@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+:root {
+  --kbLayout: 0, 0, 0;
+  --specKeys: #242D3C;
+  --defaultKeys: #353C48;
+  --clickedKeys: purple;
+  --title: #fff;
+  --font: 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #3E5151;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #DECBA4, #3E5151);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #DECBA4, #3E5151) no-repeat;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font: 20px/normal var(--font);
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.app {
+  margin: 15vh auto 0 auto;
+  padding-bottom: 20px;
+  width: 996px;
+  background: rgba(var(--kbLayout), 0.9);
+}
+
+h1 {
+  color: var(--title);
+  text-align: center;
+}
+
+.keyboard-wrapper {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 5px;
+  font: 20px/normal var(--font);
+  font-weight: bold;
+  margin: 2px 1px;
+  color: var(--title);
+  width: 3rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+  background: var(--defaultKeys);
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+
+img {
+  display: flex;
+  margin: 0 auto;
+  height: 70%;
+}
+
+.left-side {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.right-side {
+  margin-left: 0.5rem;
+}
+
+textarea {
+  display: block;
+  margin: 10px auto 0 auto;
+  font: 20px/normal font;
+  font-weight: bold;
+  padding: 10px;
+  outline: none;
+  border: 1px solid var(--specKeys);
+  background: var(--defaultKeys);
+  color: rgba(255, 255, 255, 0.8);
+  resize: none;
+  width: 90%;
+  height: 10rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#space {
+  width: 30px;
+  height: 3rem;
+}
+
+.special {
+  background: var(--specKeys);
+}
+
+.shift {
+  transform: rotate(180deg);
+}
+
+.tab {
+  margin: 0 2px;
+  text-align: left;
+  transform: rotate(270deg);
+}
+
+.enter {
+  height: 50%;
+}
+
+.caps {
+  font-size: 16px;
+  width: 7rem;
+}
+
+.left-arrow {
+  transform: rotate(180deg);
+}
+
+/* .right-arrow {
+  transform: rotate(270deg);
+} */
+
+.top-arrow {
+  transform: rotate(270deg);
+}
+
+.bottom-arrow {
+  transform: rotate(90deg);
+}
