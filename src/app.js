@@ -157,7 +157,14 @@ function keyDownPress(event) {
       } else {
         txtarea.value += event.key;
       }
-      item.style.opacity = 0.6;
+      // debugger;
+      if (event.code.toLowerCase() == "altright") {
+        // item.style.opacity = 0.6;
+        document.getElementById("spec9").style.opacity = 0.6;
+        console.log(true);
+      } else {
+        item.style.opacity = 0.6;
+      }
     }
   });
 }
@@ -175,14 +182,12 @@ function keyUpPress(event) {
 
 keys.forEach(item => {
   item.onclick = () => {
-    // debugger;
     if (
-      item.innerText.toLowerCase() == "CapsLock".toLocaleLowerCase() ||
-      item.innerText.toLowerCase() == "Ctrl".toLowerCase() ||
-      item.innerText.toLowerCase() == "Alt Gr".toLowerCase() ||
-      item.innerText.toLowerCase() == "Alt".toLowerCase()
+      item.innerText.toLowerCase() !== "CapsLock".toLowerCase() &&
+      item.innerText.toLowerCase() !== "Ctrl".toLowerCase() &&
+      item.innerText.toLowerCase() !== "Alt Gr".toLowerCase() &&
+      item.innerText.toLowerCase() !== "Alt".toLowerCase()
     ) {
-      console.log(item.innerText.toLowerCase() == "Alt".toLowerCase());
       txtarea.value += item.innerText;
     }
   };
