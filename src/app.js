@@ -55,6 +55,7 @@ function spec() {
     "right-arrow.png"
   ];
   let style = (className = "''");
+  const url = "assets/";
   return function() {
     if (count === 2) {
       className = "tab";
@@ -95,29 +96,29 @@ function spec() {
     } else if (count === 12) {
       style = "''";
       className = "left-arrow";
-      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="../assets/${
+      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="${url}${
         arrImg[count++]
       }" /></button>`;
     } else if (count === 13) {
       style = "''";
       className = "''";
-      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="../assets/${
+      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="${url}${
         arrImg[count++]
       }" /></button>`;
     } else if (count === 14) {
       style = "''";
       className = "top-arrow";
-      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="../assets/${
+      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="${url}${
         arrImg[count++]
       }" /></button>`;
     } else if (count === 15) {
       style = "''";
       className = "bottom-arrow";
-      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="../assets/${
+      return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="${url}${
         arrImg[count++]
       }" /></button>`;
     }
-    return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="../assets/${
+    return `<button id=spec${count} style=${style} class="btn special"><img class=${className} src="${url}${
       arrImg[count++]
     }" /></button>`;
   };
