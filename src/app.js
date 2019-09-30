@@ -5,6 +5,8 @@ const body = document.getElementsByTagName("body")[0];
 const $clr_clickedKeys = "purple",
   $clr_title = "#fff",
   $clr_defaultKeys = "#353C48";
+
+
 function numbs() {
   let arr = [];
   for (let i = 1; i < 10; i++) {

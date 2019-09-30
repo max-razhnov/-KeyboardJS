@@ -1,0 +1,24 @@
+{
+  "name": "keyboardjs",
+  "version": "1.0.0",
+  "description": "Надо нарисовать виртуальную клавиатуру наподобие вот такой:\r ![](http://2.bp.blogspot.com/-R0eGgtfg83c/VDtjrYbT0oI/AAAAAAAADXY/TvNcOzfAl7o/s1600/2014-10-13-012922_1366x768_scrot.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build":"parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max-razhnov/-KeyboardJS.git"
+  },
+  "author": "max razhnov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/max-razhnov/-KeyboardJS/issues"
+  },
+  "homepage": "https://github.com/max-razhnov/-KeyboardJS#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
