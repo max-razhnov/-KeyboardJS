@@ -13,8 +13,8 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
+        exclude: /node_modules/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
           {
             loader: "css-loader"
           },
@@ -22,22 +22,14 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "postcss-loader"
-          },
-          {
-            loader: "less-loader",
-            options: { sourceMap: true }
+            loader: "less-loader"
           }
         ]
       }
     ]
   },
 
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "bundle.css"
-    })
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     open: true,
