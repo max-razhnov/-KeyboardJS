@@ -1,8 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const express = require("express");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -21,21 +19,10 @@ module.exports = {
       {
         test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"]
-
-        // use: ExtractTextPlugin.extract({
-        //   fallback: "style-loader",
-        //   use: ["css-loader", "less-loader"]
-        // })
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: "./index.html" })
-    // new MiniCssExtractPlugin({
-    //   filename: "bundle.css"
-    // }),
-    // new ExtractTextPlugin("dist/bundle.css")
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     open: true,
