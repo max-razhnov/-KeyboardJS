@@ -14,6 +14,7 @@ const $clr_clickedKeys = "purple",
   app.innerHTML = template();
   const leftWrapper = document.getElementsByClassName("left-side")[0];
   const rightWrapper = document.getElementsByClassName("right-side")[0];
+  const body = document.getElementsByTagName("body")[0];
 
   for (let key in counts) {
     if (counts[key] instanceof Object) {
@@ -35,7 +36,7 @@ const $clr_clickedKeys = "purple",
   addKeyboardButton(leftWrapper, "Ctrl");
   addKeyboardButton(leftWrapper, "Alt");
   addKeyboardButton(leftWrapper, "Space");
-  addKeyboardButton(leftWrapper, "Alt");
+  addKeyboardButton(leftWrapper, "Alt", false, "", "AltRight");
 
   const buttons = [...document.getElementsByTagName("button")];
   buttons.forEach(item => {
@@ -44,7 +45,22 @@ const $clr_clickedKeys = "purple",
   [...buttons].map(item => {
     item.addEventListener("click", tapSympol);
   });
-  synchroTapKeyboard(buttons);
+
+  body.onkeydown = ev => {
+    buttons.forEach(item => {
+      if (item.innerText === ev.key) {
+        item.style.opacity = 0.8;
+        txtarea.value += ev.key;
+      }
+    });
+  };
+  body.onkeyup = ev => {
+    buttons.forEach(item => {
+      if (item.innerText === ev.key) {
+        item.style.opacity = 1;
+      }
+    });
+  };
 })();
 
 function template() {
@@ -71,24 +87,28 @@ function tapSympol(e) {
   }
 }
 
-function addTagButton(value, flag, classNameProp) {
-  let classNameDefault = "btn";
+function addTagButton(value, flag, classNameProp, id) {
+  let classNameDefault = "btn",
+    ID = "";
   if (classNameProp) {
     console.log(classNameProp);
   } else {
     classNameProp = "";
   }
+  if (id) {
+    ID = id;
+  }
   if (flag) {
-    return `<button class=${classNameDefault} >
+    return `<button  class=${classNameDefault} id=${ID}>
                 <img src=${value} alt="" />
             </button>`;
   } else {
-    return `<button class=${classNameDefault} >${value}</button>`;
+    return `<button class=${classNameDefault} id=${ID} >${value}</button>`;
   }
 }
 
-function addKeyboardButton(container, value, flag, classNameProp) {
-  return (container.innerHTML += addTagButton(value, flag, classNameProp));
+function addKeyboardButton(container, value, flag, classNameProp, id) {
+  return (container.innerHTML += addTagButton(value, flag, classNameProp, id));
 }
 
 function getLiterals(obj, container) {
@@ -99,11 +119,14 @@ function getLiterals(obj, container) {
 
 function synchroTapKeyboard(buttons) {
   const body = document.getElementsByTagName("body")[0];
-  body.onkeydown = keyDown;
-  body.onkeyup = keyUp;
+  body.onkeydown = ev => {
+    buttons.forEach(item => {
+      if (item.innerText === ev.key) {
+        item.style.opacity = 0.8;
+      }
+    });
+  };
+  body.onkeyup = ev => {
+    // console.log(ev);
+  };
 }
-
-function keyDown(ev) {
-  console.log(ev);
-}
-function keyUp(ev) {}
