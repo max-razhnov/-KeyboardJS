@@ -1,14 +1,7 @@
-@kbLayout: 0, 0, 0;
-@specKeys: #242d3c;
-@defaultKeys: #353c48;
-@clickedKeys: purple;
-@title: #fff;
-@font: "Roboto", sans-serif;
 * {
   margin: 0;
   padding: 0;
 }
-
 body {
   color: red;
   height: 100vh;
@@ -22,59 +15,50 @@ body {
   font-weight: bold;
   overflow: hidden;
 }
-
 #app {
   margin: 15vh auto 0 auto;
   padding-bottom: 20px;
   max-width: 996px;
-  background: rgba(@kbLayout, 0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
-
 h1 {
-  font: 20px / normal @font;
-  color: @title;
+  font: 20px / normal "Roboto", sans-serif;
+  color: #fff;
   text-align: center;
 }
-
 .keyboard-wrapper {
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
 }
-
 .btn {
   border-radius: 5px;
-  font: 20px / normal @font;
+  font: 20px / normal "Roboto", sans-serif;
   font-weight: bold;
   margin: 2px 1px;
-  color: @title;
+  color: #fff;
   width: 3rem;
   height: 3rem;
   outline: none;
   border: none;
-  background: @defaultKeys;
+  background: #353c48;
 }
-
 .btn:active {
   opacity: 0.6;
 }
-
 img {
   display: flex;
   margin: 0 auto;
   height: 70%;
 }
-
 .left-side {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
 }
-
 .right-side {
   margin-left: 0.5rem;
 }
-
 textarea {
   display: block;
   margin: 10px auto 0 auto;
@@ -82,52 +66,44 @@ textarea {
   font-weight: bold;
   padding: 10px;
   outline: none;
-  border: 1px solid @specKeys;
-  background: @defaultKeys;
-  color: rgba(@title, 0.8);
+  border: 1px solid #242d3c;
+  background: #353c48;
+  color: rgba(255, 255, 255, 0.8);
   resize: none;
   width: 90%;
   height: 10rem;
   box-sizing: border-box;
   overflow: hidden;
 }
-
 #space {
   width: 30px;
   height: 3rem;
 }
-
 .special {
-  background: @specKeys;
+  background: #242d3c;
 }
-
 .shift {
   transform: rotate(180deg);
 }
-
 .tab {
   margin: 0 2px;
   text-align: left;
   transform: rotate(270deg);
 }
-
 .enter {
   height: 50%;
 }
-
 .caps {
   font-size: 16px;
   width: 7rem;
 }
-
 .left-arrow {
   transform: rotate(180deg);
 }
-
 .top-arrow {
   transform: rotate(270deg);
 }
-
 .bottom-arrow {
   transform: rotate(90deg);
 }
+/*# sourceMappingURL=styles.css.map */
